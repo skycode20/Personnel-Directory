@@ -22,10 +22,56 @@ function DataArea() {
         ]
     });
 
-        //retrun dataareacontext.provider with values to pass to the datatable
+    // Function to order Personnel by Alphabetical Order
+    const handleOrder = heading => {
+        if (userState.alphabetical === true) {
+            setUserState({
+                alphabetical: false
+            })
+        } else {
+            setUserState({
+                alphabetical: true
+            })
+        }
+
+        
+        const compareEmployees = (a, b) => {
+             
+            if (userState.alphabetical === true) {
+               
+                if (a[heading] === undefined) {
+                    return 1;
+
+                } else if (b[heading] === undefined) {
+                    return -1;
+                
+                } else if (heading === "name") {
+                    return a[heading].first.localeCompare(b[heading].first);
+                } else {
+                    
+                    return b[heading] - a[heading];
+                }
+            } else {
+                
+                if (a[heading] === undefined) {
+                    return 1;
+                } else if (b[heading] === undefined) {
+                    return -1;
+                    
+                } else if (heading === "name") {
+                    return b[heading].first.localeCompare(a[heading].first);
+                    
+                } else {
+                    return a[heading] - b[heading];
+                }
+            }
+        }
+
+
+
         return (
             
-        )
+        );
     
     }
     
