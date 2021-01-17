@@ -26,3 +26,8 @@ code {
 .table-column {
   cursor: pointer;
 }
+
+.data-area {
+  width: 80%;
+  justify-content: center;
+}
