@@ -1,10 +1,12 @@
 import React from "react";
+import DataArea from "../DataArea";
 import "../../index.css";
+
 
 function Main () {
     return (
         <main className="main-area">
-            Stuff goes here:
+            <DataArea />
         </main>
     )
 }
