@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import DataTable from "../DataTable";
-import API from "../../utils/API";
+import generateUsers  from "../../utils/API";
 import "../../index.css";
 import DataAreaContext from "../../utils/DataAreaContext"
 import FormInput from "../FormInput";
@@ -92,7 +92,7 @@ function DataArea() {
     }
 
     useEffect(() => {
-        API.getUsers().then(results => {
+        generateUsers().then(results => {
             setUserState({
                 employees: results.data.results,
                 filteredEmployees: results.data.results,
