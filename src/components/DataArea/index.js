@@ -92,7 +92,21 @@ function DataArea() {
         });
     }
 
-
+    useEffect(() => {
+        API.getUsers().then(results => {
+            setUserState({
+                employees: results.data.results,
+                filteredEmployees: results.data.results,
+                headings: [
+                    { name: "Image" },
+                    { name: "Name" },
+                    { name: "Phone" },
+                    { name: "Email" },
+                    { name: "DOB" }
+                ]
+            });
+        });
+    }, []);
 
     return (
             
