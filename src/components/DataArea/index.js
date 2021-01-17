@@ -34,33 +34,33 @@ function DataArea() {
             })
         }
 
-        
+
         const compareEmployees = (a, b) => {
-             
+
             if (userState.alphabetical === true) {
-               
+
                 if (a[heading] === undefined) {
                     return 1;
 
                 } else if (b[heading] === undefined) {
                     return -1;
-                
+
                 } else if (heading === "name") {
                     return a[heading].first.localeCompare(b[heading].first);
                 } else {
-                    
+
                     return b[heading] - a[heading];
                 }
             } else {
-                
+
                 if (a[heading] === undefined) {
                     return 1;
                 } else if (b[heading] === undefined) {
                     return -1;
-                    
+
                 } else if (heading === "name") {
                     return b[heading].first.localeCompare(a[heading].first);
-                    
+
                 } else {
                     return a[heading] - b[heading];
                 }
@@ -68,11 +68,36 @@ function DataArea() {
         }
 
 
+        const sortedEmployees = userState.filteredEmployees.sort(compareEmployees);
 
-        return (
+        setUserState({
+            ...userState,
+            filteredEmployees: sortedEmployees
+        })
+    };
+
+
+
+    // Function to set the userState
+    const handleInputChange = event => {
+        const searchTerm = event.target.value;
+        const searchedEmployees = userState.employees.filter(employee => {
+            let item = employee.name.first + employee.name.last + employee.email + employee.cell + employee.dob.age;
+            return item.indexOf(searchTerm) !== -1;
+        })
+
+        setUserState({
+            ...userState,
+            filteredEmployees: searchedEmployees
+        });
+    }
+
+
+
+    return (
             
         );
-    
-    }
-    
-    export default DataArea;
+
+}
+
+export default DataArea;
