@@ -16,3 +16,9 @@ code {
   margin: auto;
   text-align: center;
 }
+
+.search-div button:hover{
+  border: grey;
+  background: grey;
+  color: white;
+}
