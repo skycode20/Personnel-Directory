@@ -15,12 +15,30 @@ code {
 .head-jumbo {
   margin: auto;
   text-align: center;
+  color: goldenrod;
+
 }
 
-.search-div button:hover{
-  border: grey;
-  background: grey;
-  color: white;
+.text-header {
+  border-style: dashed;
+  border-radius: 5px;
+  background-color: black;
+  margin: auto;
+}
+
+.search-div button{
+  border: goldenrod;
+  border-style: dashed;
+  border-radius: 4px;
+  background: black;
+  color: goldenrod;
+}
+
+.footer {
+  background-color: black;
+  color: goldenrod;
+  border-top-style: dashed;
+  border-radius: 4px;
 }
 
 .table-column {

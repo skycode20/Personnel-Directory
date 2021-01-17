@@ -8,7 +8,7 @@ function Footer () {
 			<div class="container-fluid h-25">
 
 				<div class="row">
-					<div class="col-lg-12 bg-light text-center text-bottom text-muted pt-3">
+					<div class="col-lg-12 text-center text-bottom pt-3">
 						<p>Copyright © Skyler Rencher 2021</p>
 					</div>
 
