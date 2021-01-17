@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from "react";
 import DataTable from "../DataTable";
-import Header from "../Header";
 import API from "../../utils/API";
 import "../../index.css";
 import DataAreaContext from "../../utils/DataAreaContext"
@@ -109,8 +108,13 @@ function DataArea() {
     }, []);
 
     return (
-            
-        );
+        <DataAreaContext.Provider value={{ userState, handleInputChange, handleOrder }}>
+            <FormInput />
+            <div className="data-area mx-auto">
+                {userState.filteredEmployees.length > 0 ? <DataTable /> : <div className="null-results">No Employees</div>}
+            </div>
+        </DataAreaContext.Provider>
+    );
 
 }
 
